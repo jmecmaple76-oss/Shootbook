@@ -1,0 +1,13 @@
+{
+  "name": "ShootBook — Photography Planner",
+  "short_name": "ShootBook",
+  "description": "Organize your photography sessions, clients, shot lists and gear.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101318",
+  "theme_color": "#101318",
+  "icons": [
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
