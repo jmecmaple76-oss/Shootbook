@@ -127,6 +127,114 @@ label{margin-top:13px}
 }
 `;
 
+
+/* Desktop redesign — intentionally applies at desktop widths, not just mobile */
+style.textContent += `
+@media (min-width: 900px){
+  :root{
+    --bg:#0a0e14;--panel:#121a25;--panel2:#1a2635;--line:#263548;
+    --text:#f2f6fc;--muted:#91a2b7;--accent:#b7d8ff;
+  }
+  body{
+    background:
+      radial-gradient(ellipse at 12% 0%,rgba(75,112,155,.13),transparent 34rem),
+      radial-gradient(ellipse at 92% 14%,rgba(87,105,143,.09),transparent 28rem),
+      var(--bg);
+    color:var(--text);
+  }
+  .shell{max-width:1440px;padding:34px 48px 64px}
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:0 0 25px;margin:0 0 26px;border-bottom:1px solid #263548;
+  }
+  .brand{gap:15px}
+  .logo{
+    width:52px;height:52px;border-radius:16px;
+    background:linear-gradient(145deg,#b7d8ff,#648bb5);
+    color:#101a27;box-shadow:0 10px 28px #0005;
+  }
+  h1{font-size:29px;letter-spacing:-.045em}
+  .sub{font-size:10px;letter-spacing:.18em;margin-top:5px;color:#91a2b7}
+  #newShoot{padding:13px 20px;border-radius:13px;font-size:14px}
+  .tabs,.extra-tabs{
+    display:flex;flex-wrap:wrap;gap:9px;margin:0 0 17px;padding:0 0 4px;
+  }
+  .extra-tabs{margin:0 0 30px}
+  .tab{
+    min-height:43px;padding:11px 18px;border-radius:12px;
+    background:#111a26;border:1px solid #263548;color:#aebdd0;
+    font-size:13px;font-weight:600;
+  }
+  .tab:hover{background:#1b2939;border-color:#49617e;color:#f5f8fc}
+  .tab.active{
+    color:#f5f9ff;background:#263b53;border-color:#6487ad;
+    box-shadow:inset 0 0 0 1px #6487ad22;
+  }
+  .hero{
+    padding:34px 38px;border:1px solid #30445b;border-radius:22px;
+    background:linear-gradient(112deg,#1a2b3e 0%,#172332 56%,#151d2a 100%);
+    box-shadow:0 18px 45px #0003;position:relative;overflow:hidden;
+  }
+  .hero:after{
+    content:"";position:absolute;width:270px;height:270px;border-radius:50%;
+    right:7%;top:-155px;border:1px solid #a9c9ed20;
+    box-shadow:0 0 0 28px #a9c9ed08,0 0 0 58px #a9c9ed06;
+    pointer-events:none;
+  }
+  .hero h2{font-size:30px;letter-spacing:-.04em;margin:0 0 9px}
+  .hero p{font-size:15px;max-width:600px;color:#b5c4d6;line-height:1.7}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0 24px}
+  .stat{
+    padding:22px 24px;border:1px solid #28394d;border-radius:17px;
+    background:linear-gradient(145deg,#151f2c,#111923);
+    box-shadow:0 10px 28px #0002;min-height:112px;
+  }
+  .stat strong{display:block;font-size:30px;letter-spacing:-.045em;margin-bottom:7px}
+  .stat span{font-size:12px;color:#9aacc1;letter-spacing:.02em}
+  .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .feature-card{
+    padding:22px 24px;border:1px solid #28394d;border-radius:17px;
+    background:linear-gradient(145deg,#151f2c,#111923);
+  }
+  .feature-card h3{font-size:15px;letter-spacing:.01em;margin-bottom:14px}
+  .feature-card p{font-size:13px;margin:9px 0;color:#9aacc1}
+  .metric{font-size:32px;letter-spacing:-.04em}
+  .sectionhead{margin:34px 0 15px;align-items:center}
+  .sectionhead h2{font-size:20px;letter-spacing:-.025em}
+  .shoots{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .shoot-card,.card{
+    padding:21px;border:1px solid #28394d;border-radius:17px;
+    background:linear-gradient(145deg,#151f2c,#111923);
+    box-shadow:0 9px 26px #0002;transition:transform .18s,border-color .18s,box-shadow .18s;
+  }
+  .shoot-card:hover,.card:hover{
+    transform:translateY(-2px);border-color:#49617e;box-shadow:0 15px 32px #0003;
+  }
+  .shoot-card h3{font-size:17px;letter-spacing:-.02em}
+  .toolbar{gap:12px;margin:16px 0 20px}
+  .toolbar input{max-width:440px}
+  input,textarea,select{
+    border:1px solid #2b3b50;background:#0e1621;color:#f2f6fc;
+    border-radius:11px;padding:12px 14px;
+  }
+  input:focus,textarea:focus,select:focus{
+    outline:2px solid #7da7d2;outline-offset:1px;border-color:#7da7d2;
+  }
+  .btn{border-radius:11px;font-weight:650}
+  .btn.primary{background:#b7d8ff;color:#142235;border-color:#b7d8ff}
+  .btn.primary:hover{background:#d0e5ff}
+  .empty{padding:42px;border:1px dashed #344960;border-radius:17px;background:#111a25}
+  .calendar-grid{gap:7px}
+  .cal-day{min-height:104px;padding:10px;border-radius:12px;background:#121c28;border-color:#293b50}
+  .cal-event{background:#263d57;color:#e1efff;padding:5px 7px;border-radius:6px}
+  .feature-grid,.stats,.shoots{align-items:stretch}
+}
+@media (min-width:1200px){
+  .shell{padding-left:64px;padding-right:64px}
+  .shoots{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+`;
+
 document.head.appendChild(style);
 let extraNav=document.createElement("nav");extraNav.className="extra-tabs";extraNav.setAttribute("aria-label","More ShootBook sections");extraNav.innerHTML=[['calendar','Calendar'],['clients','Clients'],['gear','Gear'],['inspiration','Inspiration']].map(([v,t])=>`<button class="tab" data-extra-view="${v}">${t}</button>`).join("");const mainNav=document.querySelector(".tabs");if(mainNav)mainNav.after(extraNav);
 const lightbox=document.createElement("div");lightbox.className="photo-lightbox";lightbox.innerHTML='<button class="lightbox-close" aria-label="Close">×</button><button class="lightbox-nav lightbox-prev" aria-label="Previous">‹</button><img alt="Full-size photoshoot image"><button class="lightbox-nav lightbox-next" aria-label="Next">›</button><div class="lightbox-count"></div>';document.body.appendChild(lightbox);
